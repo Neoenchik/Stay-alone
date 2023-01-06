@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Indicators : MonoBehaviour
 {
-
+    
     public Image healthBar, foodBar, energyBar;
     [Header("Set in Inspector")]
     public float healthAmount = 100;
