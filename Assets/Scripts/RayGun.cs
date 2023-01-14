@@ -1,5 +1,3 @@
-using System.Collections;
-using static UnityEngine.Rendering.SplashScreen;
 using UnityEngine;
 
 public class RayGun : MonoBehaviour
@@ -21,6 +19,7 @@ public class RayGun : MonoBehaviour
 
     void Update()
     {
+
 
         if (Input.GetMouseButton(0))
         {
@@ -48,6 +47,7 @@ public class RayGun : MonoBehaviour
         }
 
     }
+
 
 
 

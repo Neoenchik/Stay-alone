@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -23,21 +21,21 @@ public class PlayerInteraction : MonoBehaviour
 
         bool hitSomething = false;
 
-        if(Physics.Raycast(ray, out hit, intetactionDistance))
+        if (Physics.Raycast(ray, out hit, intetactionDistance))
         {
             IInteractable interactable = hit.collider.GetComponent<IInteractable>();
 
-            if(interactable != null)
+            if (interactable != null)
             {
                 hitSomething = true;
-                intetactionText.text =interactable.GetDescription();
+                intetactionText.text = interactable.GetDescription();
 
-                if(Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     interactable.Interact();
                 }
             }
         }
-        intetactionUI.SetActive(hitSomething); 
+        intetactionUI.SetActive(hitSomething);
     }
 }

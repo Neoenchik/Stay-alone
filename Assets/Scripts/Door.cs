@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour, IInteractable
@@ -9,7 +7,7 @@ public class Door : MonoBehaviour, IInteractable
 
     void Start()
     {
-        if(IsOpen)
+        if (IsOpen)
         {
             m_Animator.SetBool("IsOpen", true);
         }
@@ -17,22 +15,22 @@ public class Door : MonoBehaviour, IInteractable
 
     public string GetDescription()
     {
-        if(IsOpen) return "Press [E] to <color=red>close</color> the door";
+        if (IsOpen) return "Press [E] to <color=red>close</color> the door";
         else return "Press [E] to <color=green>open</color> the door";
     }
-    
+
     public void Interact()
     {
         IsOpen = !IsOpen;
-        if(IsOpen)
+        if (IsOpen)
         {
             m_Animator.SetBool("IsOpen", true);
-            this.GetComponent<BoxCollider>().isTrigger = false; 
+            this.GetComponent<BoxCollider>().isTrigger = false;
         }
         else
         {
             m_Animator.SetBool("IsOpen", false);
-            this.GetComponent<BoxCollider>().isTrigger = true; 
+            this.GetComponent<BoxCollider>().isTrigger = true;
         }
     }
 }

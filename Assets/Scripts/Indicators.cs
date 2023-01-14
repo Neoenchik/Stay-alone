@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Indicators : MonoBehaviour
 {
-    
+
     public Image healthBar, foodBar, energyBar;
     [Header("Set in Inspector")]
     public float healthAmount = 100;
@@ -23,13 +21,13 @@ public class Indicators : MonoBehaviour
 
     void Update()
     {
-        if(foodAmount > 0)
+        if (foodAmount > 0)
         {
             foodAmount -= 100 / secondsToEmptyFood * Time.deltaTime;
             foodBar.fillAmount = foodAmount / 100;
         }
 
-        if(foodAmount <= 0 )
+        if (foodAmount <= 0)
         {
             healthAmount -= 100 / secondsToEmptyHealth * Time.deltaTime;
         }
